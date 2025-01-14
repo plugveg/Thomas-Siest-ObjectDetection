@@ -38,4 +38,34 @@ Ce projet est une implémentation de Object Detection en C#. Il contient :
   </ItemGroup>
     ```
   - PS: On peut aussi le faire via l'interface graphique de Rider (comme expliqué dans l'énoncé).
-- 
+
+## Implémenter votre librairie de ObjectDetection (4 points) 
+- Importer les dépendances nécessaires via NuGet.
+  - Microsoft.ML version 4.0.0 
+  - Microsoft.ML.ImageAnalytics version 4.0.0 
+  - Microsoft.ML.OnnxRuntime version 1.20.1
+  - Microsoft.ML.OnnxTransformer version 4.0.0
+  - System.Drawing.Common version 9.0.0 
+  - Commande : 
+    - `dotnet add src/Thomas.Siest.ObjectDetection package Microsoft.ML --version 4.0.0`
+    - `dotnet add src/Thomas.Siest.ObjectDetection package Microsoft.ML.ImageAnalytics --version 4.0.0`
+    - `dotnet add src/Thomas.Siest.ObjectDetection package Microsoft.ML.OnnxRuntime --version 1.20.1`
+    - `dotnet add src/Thomas.Siest.ObjectDetection package Microsoft.ML.OnnxTransformer --version 4.0.0`
+    - `dotnet add src/Thomas.Siest.ObjectDetection package System.Drawing.Common --version 9.0.0`
+- Copier les fichiers `TinyYolo2_model.onnx` et `Yolo.cs` dans le dossier `src/Thomas.Siest.ObjectDetection`.
+- Configure le fichier `TinyYolo2_model.onnx` pour qu'il soit copié dans le dossier de sortie de l'application.
+  - Exemple :
+  ```xml
+  <ItemGroup>
+    <None Update="TinyYolo2_model.onnx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  ```
+  - PS: On peut aussi le faire via l'interface graphique de Rider (comme expliqué dans l'énoncé).
+- Implémenter la classe `ObjectDetection` dans le fichier `ObjectDetection.cs`.
+- Revoir les résultats des fichiers tests selon les images fournies.
+## ATTENTION : lors de l'execution des tests unitaires, il est possible que le test unitaire ne passe pas du fait que les deux images soient checkées au même moment. Il est possible de les checker une par une pour voir si les tests passent.
+### Voici la preuve que les tests passent :
+![Tests](tests/Thomas.Siest.ObjectDetection.Tests/Static/PreuveUnitTestingPass.png)
+

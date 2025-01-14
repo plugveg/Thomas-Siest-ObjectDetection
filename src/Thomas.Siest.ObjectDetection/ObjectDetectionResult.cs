@@ -1,4 +1,6 @@
-﻿namespace Thomas.Siest.ObjectDetection;
+﻿using ObjectDetection;
+
+namespace Thomas.Siest.ObjectDetection;
 
 public record ObjectDetectionResult
 {
