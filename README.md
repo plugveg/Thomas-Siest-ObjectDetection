@@ -79,3 +79,12 @@ Comme on prévoie d'ajouter une API Web, il est préférable d'adopter la struct
   - PS: Il est possible que le chemin soit différent selon l'ordinateur.
 ### Voici la preuve que le projet console fonctionne :
 ![Console](apps/Thomas.Siest.ObjectDetection.Console/Static/PreuveConsole.png)
+
+## Exposition via une Api Web (3 points)
+De même que pour le projet console, il est préférable d'adopter la structure avec un dossier apps, car cela permet une organisation plus nette.
+- Créer un projet API Web nommé `Thomas.Siest.ObjectDetection.WebApi` via la commande `dotnet new web -n Thomas.Siest.ObjectDetection.WebApi -o apps/Thomas.Siest.ObjectDetection.WebApi`.
+- Ajouter le projet à la solution via la commande `dotnet sln add apps/Thomas.Siest.ObjectDetection.WebApi`.
+- Ajouter une référence vers le projet `Thomas.Siest.ObjectDetection` via la commande `dotnet add apps/Thomas.Siest.ObjectDetection.WebApi reference src/Thomas.Siest.ObjectDetection`.
+- Importer Swagger via la commande `dotnet add apps/Thomas.Siest.ObjectDetection.WebApi package Swashbuckle.AspNetCore`.
+- Implémenter la nouvelle route HTTP POST ObjectDetection dans le fichier `Program.cs`.
+- Tester via la commande `dotnet run --project apps/Thomas.Siest.ObjectDetection.WebApi`.
