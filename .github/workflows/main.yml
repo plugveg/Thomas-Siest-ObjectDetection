@@ -25,10 +25,10 @@ jobs:
         run: dotnet restore
 
       - name: Build the solution
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build
 
       - name: Run tests
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test
 
       - name: Publish Console App
         run: dotnet publish apps/Thomas.Siest.ObjectDetection.Console/Thomas.Siest.ObjectDetection.Console.csproj --configuration Release --output ./output --runtime win-x64 --self-contained true
