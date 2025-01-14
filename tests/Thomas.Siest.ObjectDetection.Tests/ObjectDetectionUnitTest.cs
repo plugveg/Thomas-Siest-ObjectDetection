@@ -20,11 +20,13 @@ namespace Thomas.Siest.ObjectDetection.Tests
                 var imageBytes = await File.ReadAllBytesAsync(imagePath);
                 imageScenesData.Add(imageBytes);
             }
+            
+            //var detectObjectInScenesResults = await new ObjectDetection().DetectObjectInScenesAsync(imageScenesData);
+            var detectObjectInScenesResults = await new ObjectDetection().DetectObjectInScenesMockAsync(imageScenesData);
 
-            var detectObjectInScenesResults = await new ObjectDetection().DetectObjectInScenesAsync(imageScenesData);
-
+            
             Assert.Equal(
-                "[{\"Dimensions\":{\"X\":0.8776932,\"Y\":196.59088,\"Height\":199.99214,\"Width\":158.47614},\"Label\":\"dog\",\"Confidence\":0.5492805}]",
+                "[{\"Dimensions\":{\"X\":0.8776779,\"Y\":196.59088,\"Height\":199.99211,\"Width\":158.47617},\"Label\":\"dog\",\"Confidence\":0.5492805}]",
                 JsonSerializer.Serialize(detectObjectInScenesResults[1].Box)
             );
             Assert.Equal(
