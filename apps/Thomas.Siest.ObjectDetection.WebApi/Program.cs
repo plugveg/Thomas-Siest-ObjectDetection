@@ -21,7 +21,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.MapGet("/", () => "Hello to the Microsoft Technologies 2025 Examen - Thomas Siest ObjectDetection!");
+app.MapGet("/", () =>
+{
+    var swaggerUrl = "/swagger";
+    return Results.Text($@"
+        <html>
+            <body>
+                <h1>Welcome to the Microsoft Technologies 2025 Examen - Thomas Siest ObjectDetection!</h1>
+                <p>Access the <a href='{swaggerUrl}'>Swagger API Documentation</a> to test the API.</p>
+            </body>
+        </html>",
+        "text/html");
+});
 
 app.MapPost("/ObjectDetection", async ([FromForm] IFormFileCollection files) =>
 {
