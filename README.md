@@ -6,6 +6,10 @@ Ce projet est une implémentation de Object Detection en C#. Il contient :
 - Une application console.
 - Une API Web exposant les fonctionnalités.
 
+INFO : Les tests unitaires sont capricieux car les données des images ne renvoient pas les mêmes coordonnées entre le local et la pipeline de GitHub. 
+Il est possible que les tests unitaires ne passent pas. 
+Il est possible de les checker une par une pour voir si les tests passent.
+
 ## Lien GitHub
 [Consultez le projet sur GitHub](https://github.com/plugveg/Thomas-Siest-ObjectDetection)
 
