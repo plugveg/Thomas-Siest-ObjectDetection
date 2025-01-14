@@ -70,7 +70,12 @@ Ce projet est une implémentation de Object Detection en C#. Il contient :
 ![Tests](tests/Thomas.Siest.ObjectDetection.Tests/Static/PreuveUnitTestingPass.png)
 
 ## Création d’un projet console qui consomme votre librairie (3 points) 
-- Créer un projet console nommé `Thomas.Siest.ObjectDetection.Console` via la commande `dotnet new console -n Thomas.Siest.ObjectDetection.Console -o src/Thomas.Siest.ObjectDetection.Console`.
-- Ajouter le projet à la solution via la commande `dotnet sln add src/Thomas.Siest.ObjectDetection.Console`.
-- Ajouter une référence vers le projet `Thomas.Siest.ObjectDetection` via la commande `dotnet add src/Thomas.Siest.ObjectDetection.Console reference src/Thomas.Siest.ObjectDetection`.
-- 
+Comme on prévoie d'ajouter une API Web, il est préférable d'adopter la structure avec un dossier apps, car cela permet une organisation plus nette.
+- Créer un projet console nommé `Thomas.Siest.ObjectDetection.Console` via la commande `dotnet new console -n Thomas.Siest.ObjectDetection.Console -o apps/Thomas.Siest.ObjectDetection.Console`.
+- Ajouter le projet à la solution via la commande `dotnet sln add apps/Thomas.Siest.ObjectDetection.Console`.
+- Ajouter une référence vers le projet `Thomas.Siest.ObjectDetection` via la commande `dotnet add apps/Thomas.Siest.ObjectDetection.Console reference src/Thomas.Siest.ObjectDetection`.
+- Implémenter la classe `Program` dans le fichier `Program.cs`.
+- Tester via la commande `dotnet run --project apps/Thomas.Siest.ObjectDetection.Console "C:\Users\plugv\Development\microsoftTech\Thomas-Siest-ObjectDetection\tests\Thomas.Siest.ObjectDetection.Tests\Scenes"`
+  - PS: Il est possible que le chemin soit différent selon l'ordinateur.
+### Voici la preuve que le projet console fonctionne :
+![Console](apps/Thomas.Siest.ObjectDetection.Console/Static/PreuveConsole.png)
