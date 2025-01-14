@@ -31,7 +31,7 @@ jobs:
         run: dotnet test
 
       - name: Publish Console App
-        run: dotnet publish apps/ObjectDetection.Console/ObjectDetection.Console.csproj --configuration Release --output ./output --runtime win-x64 --self-contained true
+        run: dotnet publish apps/Thomas.Siest.ObjectDetection.Console/Thomas.Siest.ObjectDetection.Console.csproj --configuration Release --output ./output --runtime win-x64 --self-contained true
 
       - name: Upload Console App Artifact
         uses: actions/upload-artifact@v3
