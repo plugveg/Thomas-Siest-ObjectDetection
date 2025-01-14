@@ -69,3 +69,8 @@ Ce projet est une implémentation de Object Detection en C#. Il contient :
 ### Voici la preuve que les tests passent :
 ![Tests](tests/Thomas.Siest.ObjectDetection.Tests/Static/PreuveUnitTestingPass.png)
 
+## Création d’un projet console qui consomme votre librairie (3 points) 
+- Créer un projet console nommé `Thomas.Siest.ObjectDetection.Console` via la commande `dotnet new console -n Thomas.Siest.ObjectDetection.Console -o src/Thomas.Siest.ObjectDetection.Console`.
+- Ajouter le projet à la solution via la commande `dotnet sln add src/Thomas.Siest.ObjectDetection.Console`.
+- Ajouter une référence vers le projet `Thomas.Siest.ObjectDetection` via la commande `dotnet add src/Thomas.Siest.ObjectDetection.Console reference src/Thomas.Siest.ObjectDetection`.
+- 
