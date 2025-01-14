@@ -7,6 +7,8 @@ public class ObjectDetection
 {
     public async Task<IList<ObjectDetectionResult>> DetectObjectInScenesAsync(IList<byte[]> imagesSceneData)
     {
+        await Task.Delay(1000);
+
         var results = new ConcurrentBag<ObjectDetectionResult>();
         var tinyYolo = new Yolo();
 
