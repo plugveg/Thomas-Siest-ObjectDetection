@@ -88,3 +88,9 @@ De même que pour le projet console, il est préférable d'adopter la structure 
 - Importer Swagger via la commande `dotnet add apps/Thomas.Siest.ObjectDetection.WebApi package Swashbuckle.AspNetCore`.
 - Implémenter la nouvelle route HTTP POST ObjectDetection dans le fichier `Program.cs`.
 - Tester via la commande `dotnet run --project apps/Thomas.Siest.ObjectDetection.WebApi`.
+
+## Intégration continue avec GitHubAction (3 points) 
+- Créer un fichier [.github/workflows/main.yml](.github/workflows/main.yml) à la racine du projet.
+- Ajouter le fichier [.gitignore](.gitignore) à la racine du projet via la commande `dotnet new gitignore`.
+- Ajouter le fichier [README.md](README.md) à la racine du projet.
+- Ajouter le fichier [global.json](global.json) à la racine du projet avec notre version du SDK.
